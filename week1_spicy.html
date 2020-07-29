@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+
+    <style>
+        * {
+            font-family: 'Noto Serif KR', serif;
+        }
+
+        .wrap {
+            margin: auto;
+            width: 500px;
+
+        }
+
+        .img {
+            background-image: url('https://blogfiles.pstatic.net/MjAyMDA0MjNfNzMg/MDAxNTg3NjM2NzE4MzQz.eLMZ9c3qhSG6M2ETRnXVtVRM2qbiEVa402LUb-mkjJkg.0ElvAQn4txCwJYiNqr8Gby2gtRMb6ZR5oQNKd6slYicg.JPEG.tlstmdgns654/noroll_%EB%A3%A9%EB%B6%817.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 500px;
+            height: 300px;
+
+
+        }
+
+        .itemdes {
+            width: 500px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 14px;
+        }
+
+        .itemorder {
+            width: 500px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .itembutton {
+            width: 100px;
+            margin: auto;
+            display: block;
+
+        }
+
+    </style>
+
+
+    <script>
+        function hey() {
+            alert('주문이 완료되엇습니다!');}
+    </script>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="img"></div>
+    <div class="itemdes">
+        <h1>모자를 팝니다 <span class="price"> 가격 39,900원/</span></h1>
+        <p>더운 여름날, 뜨거운 햇살을 가려줄 모자를 팝니다. 머리가 크든 작든 누구나 쓸 수 있는 free size입니다. </p>
+    </div>
+
+    <div class="itemorder">
+        <h1>주문하기</h1>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">주문자 성함</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">주문 수량</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>--품절임박--</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">주소</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">전화번호</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+    </div>
+
+    <button onclick="hey()" type="button" class="btn btn-danger itembutton">주문하기</button>
+
+</div>
+</body>
+
+</html>

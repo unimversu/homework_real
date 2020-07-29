@@ -1,0 +1,201 @@
+<!Doctype html>
+<html lang="ko">
+123123
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+
+    <style>
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .wrap {
+            margin: auto;
+            width: 500px;
+
+        }
+
+        .img1 {
+            background-image: url('https://contents.sixshop.com/thumbnails/uploadedFiles/25892/product/image_1586180471441_1000.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 500px;
+            height: 500px;
+        }
+
+        .img2 {
+            background-image: url('https://contents.sixshop.com/thumbnails/uploadedFiles/25892/product/image_1586180470930_1000.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 500px;
+            height: 500px;
+
+
+        }
+
+        .itemdes {
+            width: 500px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .itemname {
+            font-weight: bolder;
+        }
+
+        .colorname {
+            font-size: 20px;
+        }
+
+        .itemorder {
+            width: 500px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .itembutton {
+            width: 100px;
+            margin: auto;
+            display: block;
+
+        }
+
+    </style>
+
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "https://api.manana.kr/exchange/rate.json",
+                data: {},
+                success: function (response) {
+                    console.log(response[1]['rate'])
+
+                    let dollorWon = response[1]['rate'];
+
+                    let tempHtml = `<p>(원달러환율 : ${dollorWon})</p>`;
+
+                    $('#change').append(tempHtml);
+
+                }
+            })// 여기에 코드를 적어주세요
+        });
+
+        function hey() {
+            if ($('#colordetail').val() == '') {
+                alert('색상을 선택해 주세요.');
+            } else if ($('#sizedetail').val() == '') {
+                alert('사이즈를 선택해 주세요.');
+            } else if ($('#namedetail').val() == '') {
+                alert('성함을 입력해 주세요.');
+            } else if ($('#addetail').val() == '') {
+                alert('주소를 입력해 주세요.');
+            } else if ($('#numdetail').val() == '') {
+                alert('전화번호를 입력해 주세요.');
+            } else
+                alert('주문이 완료되었습니다.');
+
+        }
+
+    </script>
+</head>
+
+<body>
+<div class="wrap">
+    <p></p>
+    <div class="img1"></div>
+    <p></p>
+    <div class="img2"></div>
+    <div class="itemdes">
+        <h2 class="'itemname">Human Power Plant Tee<span class="colorname"> (2color)/</span></h2>
+        <br><br>
+        <p>레나후지모토(Lena Fujimoto)의 아트웍이 프린팅 되어 있습니다.</p>
+        <br>
+        <p>COLOR : natural, black
+            <br>
+            Quality : 100% cotton
+            <br>
+            MADE IN JAPAN</p>
+        <h5>$55</h5>
+        <p id="change"></p>
+    </div>
+
+    <br>
+    <div class="orderdetail">
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2" for="colordetail">COLOR</label>
+                <select class="custom-select mr-sm-2" id="colordetail">
+                    <option selected value="">선택하세요.</option>
+                    <option value="1">natural</option>
+                    <option value="2">black</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2" for="sizedetail">SIZE</label>
+                <select class="custom-select mr-sm-2" id="sizedetail">
+                    <option selected value="">선택하세요.</option>
+                    <option value="1">S</option>
+                    <option value="2">M</option>
+                    <option value="3">L</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <p>
+        <br>
+        <br>
+    </p>
+
+    <div class="customerdetail">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="namedetail">주문자성함</label>
+                <input type="email" class="form-control" id="namedetail" placeholder="입력하세요.">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="addetail">주소</label>
+                <input type="email" class="form-control" id="addetail" placeholder="입력하세요.">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="numdetail">전화번호</label>
+                <input type="email" class="form-control" id="numdetail" placeholder="입력하세요.">
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<button onclick="hey()" type="button" class="btn btn-secondary itembutton">주문하기</button>
+
+</div>
+</body>
+
+</html>
