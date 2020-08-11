@@ -100,7 +100,6 @@
             })// 여기에 코드를 적어주세요
         });
 
-
         function makeorder() {
 
             let colordetail = $("#colordetail").val();
@@ -120,8 +119,9 @@
                 alert('주소를 입력해 주세요.');
             } else if (numdetail == '') {
                 alert('전화번호를 입력해 주세요.');
-            } else
-                alert('주문이 완료되었습니다.');
+            } else (
+                alert('주문이 완료되었습니다.'));
+
 
             $.ajax({
                 type: "POST",
@@ -153,30 +153,26 @@
                         let orders = response["orders"];
                         // 3. 요청 성공했을 때 리뷰를 올바르게 화면에 나타내기
                         for (let i = 0; i < orders.length; i++) {
-                            let colordetail = orders[i]["colordetail"],
-                                let
-                            sizedetail = orders[i]["sizedetail"],
-                                let
-                            namedetail = orders[i]["namedetail"],
-                                let
-                            addetail = orders[i]["addetail"],
-                                let
-                            numdetail = orders[i]["numdetail"];
-
-                            let tempHtml = `<tr>
-                                    <td>${colordetail}</td>
-                                    <td>${sizedetail}</td>
-                                    <td>${namedetail}</td>
-                                    <td>${addetail}</td>
-                                    <td>${numdetail}</td>
-                                            </tr>`;
-                            $("#reviews-box").append(tempHtml);
+                            makeCard(orders[i]["colordetail"], orders[i]["sizedetail"], orders[i]["namedetail"], orders[i]["addetail"], orders[i]["numdetail"]);
                         }
+                    } else {
+                        alert("주문을 받아오지 못했습니다");
                     }
                 }
             })
         }
 
+
+        function makeCard(colordetail, sizedetail, namedetail, addetail, numdetail) {
+            let tempHtml = `<tr>
+                        <td>${colordetail}</td>
+                        <td>${sizedetail}</td>
+                        <td>${namedetail}</td>
+                        <td>${addetail}</td>
+                        <td>${numdetail}</td>
+                    </tr>`;
+            $("#orderlist").append(tempHtml);
+        }
 
     </script>
 </head>

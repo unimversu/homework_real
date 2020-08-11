@@ -16,7 +16,7 @@ def homework():
 
 # 주문하기(POST) API
 @app.route('/order', methods=['POST'])
-def save_order():
+def save_orders():
     colordetail = request.form['colordetail_api']
     sizedetail = request.form['sizedetail_api']
     namedetail = request.form['namedetail_api']
@@ -24,14 +24,14 @@ def save_order():
     numdetail = request.form['numdetail_api']
 
     # 2. DB에 정보 삽입하기
-    order = {
+    doc = {
         'colordetail': colordetail,
         'sizedetail': sizedetail,
         'namedetail': namedetail,
         'addetail': addetail,
         'numdetail': numdetail,
     }
-    db.orders.insert_one(order)
+    db.orders.insert_one(doc)
     # 3. 성공 여부 & 성공 메시지 반환하기
     return jsonify({'result': 'success', 'msg': '주문해주셔서 감사합니다!'})
 
@@ -39,8 +39,8 @@ def save_order():
 # 주문 목록보기(Read) API
 @app.route('/order', methods=['GET'])
 def view_orders():
-    result = list(db.orders.find({}, {'_id': 0}))
-    return jsonify({'result': 'success', 'orders': 'order'})
+    orders = list(db.orders.find({}, {'_id': 0}))
+    return jsonify({'result': 'success', 'orders': orders})
 
 
 if __name__ == '__main__':
